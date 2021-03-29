@@ -16,9 +16,14 @@ class Main extends Component{
     constructor(props){
         super(props);
         this.state={
-            authenticated: true,
+            authenticated: localStorage.getItem('authenticated')==='true',
         }
     }
+    
+    componentDidUpdate(){
+        window.location.reload();
+    }
+    
     render(){
         return(
             <div className="app-content">
@@ -26,8 +31,8 @@ class Main extends Component{
                 <Route path="/" exact component={()=> <Home/>}/>
                 <Route path="/home" exact component={()=> <Home/>}/>
                 <Route path="/login" exact component={()=> <Login/>}/>
-                <Route path="/messages" exact component={()=> <Messages  authenticated={this.state.authenticated}/>}/>
-                <Route path="/requests" exact component={()=> <FundRaise  authenticated={this.state.authenticated}/>}/>
+                <Route path="/messages" exact component={()=> <Messages authenticated={this.state.authenticated}/>}/>
+                <Route path="/requests" exact component={()=> <FundRaise authenticated={this.state.authenticated}/>}/>
                 <Route path="/logout"  exact component={()=> <Logout />}/>
                 <Route path="/accept/:cid" component={AcceptCause}/>
                 <Route path="/decline/:cid" component={DeclineCause}/>

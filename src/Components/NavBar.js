@@ -27,13 +27,15 @@ class NavBarC extends Component{
         <Navbar expand="md" className="nav-style">
             <div className="container">
                 <NavbarToggler onClick={this.toggleNav} />
-                <NavbarBrand className="mr-auto logo-setting white-clr">CHARITY - ADMIN</NavbarBrand>
+                <NavbarBrand className="mr-auto logo-setting white-clr">
+                    <a href="/" className="remove-dec white-clr">CHARITY - ADMIN</a>
+                </NavbarBrand>
                 <Collapse isOpen={this.state.isNavOpen} navbar>
                     <Nav navbar className="ml-auto">
                         {
                             !this.props.auth && ( 
                             <NavItem>
-                                <NavLink className="nav-link" to='/login'> Login</NavLink>
+                                <NavLink className="nav-link remove-dec white-clr" to='/login'> Login</NavLink>
                             </NavItem>
                             )
                         }

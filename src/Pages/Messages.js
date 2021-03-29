@@ -65,7 +65,6 @@ class Messages extends Component{
     }
     render(){
         return(
-            
             <Container className="min-height">
                 <Row>
                     <Col lg={12} className="margint marginb centera">
@@ -86,7 +85,7 @@ class Messages extends Component{
                     <Col key={id} lg={4}>
                         <Card className="bot-margin" style={{backgroundColor: "#e6e6e6"}}>
                             <CardBody>
-                                <CardLink href={`/read/${msg.id}`} className="right-align colorg"><span className="fa fa-envelope-open fa-lg"></span></CardLink>
+                                <CardLink href={`/read/${msg.id}`} className="right-align"><span className="fa fa-envelope-open fa-lg"></span></CardLink>
                                 <CardText>
                                     <div style={{minHeight: "200px"}}>
                                         <p><strong>Name: </strong>{msg.name}</p>

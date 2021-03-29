@@ -2,7 +2,7 @@
   float: right;
 }
 .fa-envelope-open{
-  color: rgb(255, 102, 0);
+  color: rgb(255, 166, 0);
 }
 .margint{
   margin-top: 20px;
@@ -245,4 +245,7 @@ a:active {
 }
 .fa-youtube{
     color: white;
+}
+.error-msg{
+    color: red;
 }

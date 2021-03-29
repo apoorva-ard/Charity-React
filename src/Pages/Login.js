@@ -29,7 +29,6 @@ class Login extends Component{
 
     handleSubmit(e){
 
-        console.log(this.state);
         this.setState({
           logging: true,
         });
@@ -55,7 +54,7 @@ class Login extends Component{
     }
     render(){
         return(
-            <Container>
+            <Container className="min-height">
                 <Row>
                     <Col lg={12} className="margint marginb centera">
                         <h3>Login</h3>
@@ -66,26 +65,30 @@ class Login extends Component{
                         }
                         {
                         this.state.redirect && (
-                            <Redirect push to='/home'></Redirect>
+                            <Redirect to='/home'></Redirect>
                         )
                         }
                         {
                         this.state.failed && (
-                            <p>Invalid credentials!</p>
+                            <div className="error-msg">
+                                <p>*Invalid credentials!</p>
+                            </div>
                         )
                         }
                     </Col>
-                    <Col lg={{span: 4, offset: 5}}>
+                </Row>
+                <Row>
+                    <Col lg={{size: 4, offset: 4}}>
                         <Form>
-                        <FormGroup row>
-                            <Input type="text" name="uname" value={this.state.uname} id="unameip" onChange={this.handleChange} placeholder="Username" />
-                        </FormGroup>
-                        <FormGroup row>
-                            <Input type="password" name="pwd" value={this.state.pwd} id="passwordip" onChange={this.handleChange} placeholder="Password" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Button onClick={this.handleSubmit}>Login</Button>
-                        </FormGroup>
+                            <FormGroup row>
+                                <Input type="text" name="uname" value={this.state.uname} id="unameip" onChange={this.handleChange} placeholder="Username" />
+                            </FormGroup>
+                            <FormGroup row>
+                                <Input type="password" name="pwd" value={this.state.pwd} id="passwordip" onChange={this.handleChange} placeholder="Password" />
+                            </FormGroup>
+                            <FormGroup>
+                                <center><Button onClick={this.handleSubmit}  style={{backgroundImage: "linear-gradient(to right, #ff5c33, #ffa64d)", color: "black"}} >Login</Button></center>
+                            </FormGroup>
                         </Form>
                     </Col>
                 </Row>

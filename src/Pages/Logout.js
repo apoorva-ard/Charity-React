@@ -3,7 +3,7 @@ import { Redirect } from "react-router";
 
 class Logout extends Component{
     componentDidMount(){
-        localStorage.setItem('authenticated', false);
+        localStorage.setItem('authenticated', 'false');
     }
     render(){
         return(
